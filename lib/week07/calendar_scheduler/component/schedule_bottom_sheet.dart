@@ -26,6 +26,17 @@ class _ScheduleBottomSheetState extends State<ScheduleBottomSheet> {
             top: 8,
             bottom: bottomInset,
           ),
+          child: Column(
+            // 시간 관련 텍스트 필드와 내용 관련 텍스트 필드 세로로 배치
+            children: [
+              Row(
+                // 시작 시간, 종료 시간 가로로 배치
+                children: [
+                  
+                ]
+              ),
+            ],
+          ),
         ),
       ),
     );
