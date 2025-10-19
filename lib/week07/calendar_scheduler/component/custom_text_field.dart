@@ -23,10 +23,13 @@ class CustomTextField extends StatelessWidget {
             cursorColor: Colors.grey, // 커서 색상 변경
             maxLines: isTime ? 1 : null,
 
-            expands: !isTime,
+            // 시간 관련 텍스트 필드가 아닌 한 줄 이상 작성 가능
+            expands: !isTime, // 시간 관련 텍스트 필드는 공간 최대 차지
             keyboardType: isTime
                 ? TextInputType.number
                 : TextInputType.multiline,
+
+            // 시간 관련 텍스트 필드는 기본 숫자 키보드 아니면 일반 글자 키보드 보여주기
           ),
         ),
       ],
