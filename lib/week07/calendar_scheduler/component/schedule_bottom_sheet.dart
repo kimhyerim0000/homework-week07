@@ -107,7 +107,7 @@ class _ScheduleBottomSheetState extends State<ScheduleBottomSheet> {
       return '숫자를 입력해주세요';
     }
     if (number <0 || number > 24) {
-      
+      return '0'
     }
   }
 
