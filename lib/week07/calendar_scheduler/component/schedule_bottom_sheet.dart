@@ -53,6 +53,7 @@ class _ScheduleBottomSheetState extends State<ScheduleBottomSheet> {
                     foregroundColor: Colors.white,
                     backgroundColor: PRIMARY_COLOR,
                   ),
+                  child: Text('저장'),
                 ),
               ),
             ],
