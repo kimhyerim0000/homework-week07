@@ -65,9 +65,11 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
-  
+
   void onDaySelected(DateTime selectedDate, DateTime focusedDate) {
     // 날짜 선택될 때마다 실행할 함수
-    setState
+    setState(() {
+      this.selectedDate = selectedDate;
+    });
   }
 }
