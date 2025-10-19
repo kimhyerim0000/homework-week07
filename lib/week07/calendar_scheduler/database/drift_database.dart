@@ -2,7 +2,9 @@ import 'package:myapp/week07/calendar_scheduler/model/schedule.dart';
 import 'package:drift/drift.dart';
 
 import 'package:drift/native.dart';
-import 'package'
+import 'package:path_provider/path_provider.dart';
+import 'package:path/path.dart' as p;
+import 'dart:id';
 
 // private값까지 불러올 수 있음.
 part 'drift_database.g.dart'; // part 파일 저장
@@ -12,6 +14,7 @@ part 'drift_database.g.dart'; // part 파일 저장
   tables: [Schedules],
 )
 class LocalDatabase extends _$LocalDatabase {
+  LocalDatabase() : super(_openConnection());
   // Code Generation으로 생성할 클래스 상속
   Stream<List<Schedule>> watchShedules(DateTime date) =>
       // 데이터를 조회하고 변화 감지
