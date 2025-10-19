@@ -10,6 +10,26 @@ class CustomTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(crossAxisAlignment: CrossAxisAlignment.start);
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          label,
+          style: TextStyle(color: PRIMARY_COLOR, fontWeight: FontWeight.w600),
+        ),
+        Expanded(
+          flex: isTime ? 0 : 1,
+          child: TextFormField(
+            cursorColor: Colors.grey, // 커서 색상 변경
+            maxLines: isTime ? 1 : null,
+
+            expands: !isTime,
+            keyboardType: isTime
+                ? TextInputType.number
+                : TextInputType.multiline,
+          ),
+        ),
+      ],
+    );
   }
 }
