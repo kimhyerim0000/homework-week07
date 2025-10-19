@@ -64,8 +64,25 @@ class ScheduleCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        border: Border.all(width: 1.0, color: PRIMARY_COLOR),
+        border: Border.all(
+          width: 1.0,
+          color: PRIMARY_COLOR,
+        ),
+        borderRadius: BorderRadius.circular(8.0),
       ),
+      child: Padding(
+        padding: const EdgeInsets.all(6.0),
+        child: IntrinsicHeight(
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              _Time(
+                startTime: 
+              )
+            ]
+          )
+        )
+      )
     );
   }
 }
