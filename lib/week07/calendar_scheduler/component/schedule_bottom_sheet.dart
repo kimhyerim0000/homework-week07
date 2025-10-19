@@ -106,10 +106,15 @@ class _ScheduleBottomSheetState extends State<ScheduleBottomSheet> {
     } catch (e) {
       return '숫자를 입력해주세요';
     }
-    if (number <0 || number > 24) {
-      return '0'
+    if (number < 0 || number > 24) {
+      return '0시부터 24시 사이를 입력해주세요';
     }
+
+    return null;
   }
 
-  String? contentValidator(String? val) {} // 내용값 검증
+  // 미리 정의해둔 함수
+  String? contentValidator(String? val) { //
+
+  } // 내용값 검증
 }
