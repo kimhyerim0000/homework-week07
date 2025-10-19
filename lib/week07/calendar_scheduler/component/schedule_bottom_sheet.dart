@@ -93,7 +93,9 @@ class _ScheduleBottomSheetState extends State<ScheduleBottomSheet> {
   }
   // 미리 정의해둔 함수
   void onSavePressed() {
-    if
+    if (formKey.currentState!.validate()) {
+      
+    }
   }
 
   String? timeValidator(String? val) {
