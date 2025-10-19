@@ -47,6 +47,7 @@ class _ScheduleBottomSheetState extends State<ScheduleBottomSheet> {
                 width: double.infinity,
                 child: ElevatedButton(
                   // [저장] 버튼
+                  // [저장] 버튼
                   onPressed: onSavePressed,
                   style: ElevatedButton.styleFrom(
                     foregroundColor: Colors.white,
@@ -60,4 +61,6 @@ class _ScheduleBottomSheetState extends State<ScheduleBottomSheet> {
       ),
     );
   }
+
+  void onSavePressed() {}
 }
