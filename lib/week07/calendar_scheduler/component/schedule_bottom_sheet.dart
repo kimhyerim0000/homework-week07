@@ -32,8 +32,10 @@ class _ScheduleBottomSheetState extends State<ScheduleBottomSheet> {
               Row(
                 // 시작 시간, 종료 시간 가로로 배치
                 children: [
-                  
-                ]
+                  Expanded(
+                    child: CustomTextField(label: '시작 시간', isTime: true),
+                  ),
+                ],
               ),
             ],
           ),
