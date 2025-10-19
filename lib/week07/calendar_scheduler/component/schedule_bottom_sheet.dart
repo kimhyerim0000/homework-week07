@@ -10,6 +10,7 @@ class ScheduleBottomSheet extends StatefulWidget {
 }
 
 class _ScheduleBottomSheetState extends State<ScheduleBottomSheet> {
+  final GlobalKey<FormState> formkey = GlobalKey();
   @override
   Widget build(BuildContext context) {
     // 키보드 높이 가져오기
