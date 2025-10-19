@@ -106,14 +106,12 @@ class _ScheduleBottomSheetState extends State<ScheduleBottomSheet> {
       formKey.currentState!.save(); // 폼 저장하기
 
       // 기존에 있던 print()문을 모두 삭제하세요!
-      await GetIt.I<LocalDatabase>().createSchedule(  // 일정 생성하기
-        SchedulesCompanion(
-          startTime: Value(startTime!),
-          endTime: Value(endTime!),
-          content: Value(content!),
-          date: Value(widget.selectedDate),
-        )
-      )
+      await GetIt.I<LocalDatabase>().createSchedule(
+        // 일정 생성하기
+        SchedulesCompanion(startTime: Value(startTime!), endTime: Value(endTime!), content: Value(content!), date: Value(widget.selectedDate)),
+      );
+
+      Navigator.of(context).pop(); // 일정 생성 후 화면 뒤로 가기
     }
   }
 
