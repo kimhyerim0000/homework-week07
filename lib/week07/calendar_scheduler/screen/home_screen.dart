@@ -6,6 +6,7 @@ import 'package:myapp/week07/calendar_scheduler/component/main_calendar.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:myapp/week07/calendar_scheduler/database/drift_database.dart';
+import 'package:myapp/week07/calendar_scheduler/component/today_banner.dart';
 
 // StatelessWidget에서 StatefulWidget으로 전환
 class HomeScreen extends StatefulWidget {
@@ -84,17 +85,12 @@ class _HomeScreenState extends State<HomeScreen> {
                         direction: DismissDirection.startToEnd,
                         // 밀기 했을 때 실행할 함수
                         onDismissed: (DismissDirection direction) {
-                          GetIt.I<LocalDatabase>()
-                          .removeSchedule(schedule.id);
+                          GetIt.I<LocalDatabase>().removeSchedule(schedule.id);
                         },
                         child: Padding(
-                        // 좌우로 패딩을 추가해서 UI 개선
+                          // 좌우로 패딩을 추가해서 UI 개선
                           padding: const EdgeInsets.only(bottom: 8.0, left: 8.0, right: 8.0),
-                          child: ScheduleCard(
-                            startTime: schedule.startTime, 
-                            endTime: schedule.endTime, 
-                            content: schedule.content
-                          ),
+                          child: ScheduleCard(startTime: schedule.startTime, endTime: schedule.endTime, content: schedule.content),
                         ),
                       );
                     },
