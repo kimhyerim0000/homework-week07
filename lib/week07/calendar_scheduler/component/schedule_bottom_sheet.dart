@@ -9,4 +9,7 @@ class ScheduleBottomSheet extends StatefulWidget {
   State<ScheduleBottomSheet> createState() => _ScheduleBottomSheetState();
 }
 
-class _ScheduleBottomSheetState extends 
+class _ScheduleBottomSheetState extends State<ScheduleBottomSheet> {
+  @override
+  Widget build(BuildCon)
+}
