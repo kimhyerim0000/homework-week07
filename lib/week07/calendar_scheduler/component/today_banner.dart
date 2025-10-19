@@ -9,5 +9,10 @@ class TodayBanner extends StatelessWidget {
     required this.selectedDate,
     required this.count,
     super.key,
-  })
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final textStyle = TextStyle
+  }
 }
