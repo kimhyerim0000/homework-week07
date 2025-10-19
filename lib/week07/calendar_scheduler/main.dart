@@ -13,5 +13,6 @@ void main() async {
   final database = LocalDatabase(); // 데이터베이스 생성
 
   GetIt.I.registerSingleton<LocalDatabase>(database);
+  // GetIt에 데이터베이스 변수 주입하기
   runApp(MaterialApp(home: HomeScreen()));
 }
