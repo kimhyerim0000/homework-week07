@@ -28,9 +28,21 @@ class MainCalendar extends StatelessWidget {
       focusedDay: DateTime.now(),
 
       headerStyle: HeaderStyle(
-        titleCentered: true,
-        formatButtonVisible: false,
-        titleTextStyle: TextStyle(fontWeight: FontWeight.w700, fontSize: 16.0),
+        // 달력 최상단 스타일
+        titleCentered: true, // 제목 중앙에 위치하기
+        formatButtonVisible: false, // 달력 크기 선택 옵션 없애기
+        titleTextStyle: TextStyle(
+          // 제목 글꼴
+          fontWeight: FontWeight.w700,
+          fontSize: 16.0,
+        ),
+      ),
+      calendarStyle: CalendarStyle(
+        isTodayHighlighted: false,
+        defaultDecoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(6.0),
+          color: LIGHT_GREY_COLOR,
+        ),
       ),
     );
   }
