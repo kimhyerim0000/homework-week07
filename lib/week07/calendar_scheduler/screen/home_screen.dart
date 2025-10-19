@@ -60,6 +60,13 @@ class _HomeScreenState extends State<HomeScreen> {
               count: 0,
             ),
             SizedBox(height: 8.0),
+            Expanded( // 남는 공간을 모두 차지
+              // 일정 정보가 Stream으로 제공되기 때문에 StreamBuilder 사용
+              child: StreamBuilder<List<Schedule>>(
+                stream: GetIt.I<LocalDatabase>().watchSchedules(selectedDate),
+              )
+
+            ),
             ScheduleCard(
               // 구현해둔 일정 카드
               startTime: 12,
