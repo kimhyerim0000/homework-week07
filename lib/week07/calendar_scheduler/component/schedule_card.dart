@@ -34,10 +34,10 @@ class _Time extends StatelessWidget {
   }
 }
 
-class _Context extends StatelessWidget {
+class _Content extends StatelessWidget {
   final String content; // 내용
 
-  const _Context({required this.content});
+  const _Content({required this.content});
 
   @override
   Widget build(BuildContext context) {
@@ -75,6 +75,7 @@ class ScheduleCard extends StatelessWidget {
             children: [
               _Time(startTime: startTime, endTime: endTime),
               SizedBox(width: 16.0),
+              _Content(content: content),
             ],
           ),
         ),
