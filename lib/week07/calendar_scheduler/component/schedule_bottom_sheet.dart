@@ -20,41 +20,44 @@ class _ScheduleBottomSheetState extends State<ScheduleBottomSheet> {
   Widget build(BuildContext context) {
     // 키보드 높이 가져오기
     final bottomInset = MediaQuery.of(context).viewInsets.bottom;
-
-    return SafeArea(
-      child: Container(
-        height: MediaQuery.of(context).size.height / 2 + bottomInset,
-        color: Colors.white,
-        child: Padding(
-          padding: EdgeInsets.only(left: 8, right: 8, top: 8, bottom: bottomInset),
-          child: Column(
-            // 시간 관련 텍스트 필드와 내용 관련 텍스트 필드 세로로 배치
-            children: [
-              Row(
-                // 시작 시간, 종료 시간 가로로 배치
-                children: [
-                  Expanded(
-                    child: CustomTextField(
-                      // 시작 시간 입력 필드
-                      label: '시작 시간',
-                      isTime: true,
+    return Form(
+      key: formkey, // 텍스트 필드를 한번에 관리할 수 있는 폼
+      child: SafeArea(
+        // Form을 조작할 키값
+        child: Container(
+          height: MediaQuery.of(context).size.height / 2 + bottomInset,
+          color: Colors.white,
+          child: Padding(
+            padding: EdgeInsets.only(left: 8, right: 8, top: 8, bottom: bottomInset),
+            child: Column(
+              // 시간 관련 텍스트 필드와 내용 관련 텍스트 필드 세로로 배치
+              children: [
+                Row(
+                  // 시작 시간, 종료 시간 가로로 배치
+                  children: [
+                    Expanded(
+                      child: CustomTextField(
+                        // 시작 시간 입력 필드
+                        label: '시작 시간',
+                        isTime: true,
+                      ),
                     ),
-                  ),
-                ],
-              ),
-              SizedBox(height: 8.0),
-              Expanded(child: CustomTextField(label: '내용', isTime: false)),
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                  // [저장] 버튼
-                  // [저장] 버튼
-                  onPressed: onSavePressed,
-                  style: ElevatedButton.styleFrom(foregroundColor: Colors.white, backgroundColor: PRIMARY_COLOR),
-                  child: Text('저장'),
+                  ],
                 ),
-              ),
-            ],
+                SizedBox(height: 8.0),
+                Expanded(child: CustomTextField(label: '내용', isTime: false)),
+                SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    // [저장] 버튼
+                    // [저장] 버튼
+                    onPressed: onSavePressed,
+                    style: ElevatedButton.styleFrom(foregroundColor: Colors.white, backgroundColor: PRIMARY_COLOR),
+                    child: Text('저장'),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
