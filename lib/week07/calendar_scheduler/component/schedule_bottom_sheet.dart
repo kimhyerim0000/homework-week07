@@ -48,9 +48,9 @@ class _ScheduleBottomSheetState extends State<ScheduleBottomSheet> {
                         validator: timeValidator,
                       ),
                     ),
+                    SizedBox(height: 8.0),
                     Expanded(
                       child: CustomTextField(
-                        // 시작 시간 입력 필드
                         label: '종료 시간',
                         isTime: true,
                         onSaved: (String? val) {
