@@ -40,5 +40,12 @@ class _Context extends StatelessWidget {
   const _Context({required this.content});
 
   @override
-  Widget build(BuildContext context) {}
+  Widget build(BuildContext context) {
+    return Expanded(
+      //최대한 넓게 늘리기
+      child: Text(content),
+    );
+  }
 }
+
+class
