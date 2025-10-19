@@ -99,6 +99,7 @@ class _ScheduleBottomSheetState extends State<ScheduleBottomSheet> {
   }
 
   // 미리 정의해둔 함수
+  // _ScheduleBottomSheetState의 onSavePressed 함수
   void onSavePressed() async {
     if (formKey.currentState!.validate()) {
       // 폼 검증하기
