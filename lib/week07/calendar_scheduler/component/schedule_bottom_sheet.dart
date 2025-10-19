@@ -11,5 +11,10 @@ class ScheduleBottomSheet extends StatefulWidget {
 
 class _ScheduleBottomSheetState extends State<ScheduleBottomSheet> {
   @override
-  Widget build(BuildCon)
+  Widget build(BuildContext context) {
+    
+
+    // 키보드 높이 가져오기
+    final 
+  }
 }
