@@ -10,7 +10,7 @@ class ScheduleBottomSheet extends StatefulWidget {
 }
 
 class _ScheduleBottomSheetState extends State<ScheduleBottomSheet> {
-  final GlobalKey<FormState> formkey = GlobalKey(); // 폼 key 생성
+  final GlobalKey<FormState> formKey = GlobalKey(); // 폼 key 생성
 
   int? startTime; // 시작 시간 저장 변수
   int? endTime; // 종료 시간 저장 변수
@@ -22,7 +22,7 @@ class _ScheduleBottomSheetState extends State<ScheduleBottomSheet> {
     final bottomInset = MediaQuery.of(context).viewInsets.bottom;
 
     return Form(
-      key: formkey, // 텍스트 필드를 한번에 관리할 수 있는 폼
+      key: formKey, // 텍스트 필드를 한번에 관리할 수 있는 폼
       child: SafeArea(
         // Form을 조작할 키값
         child: Container(
@@ -91,10 +91,16 @@ class _ScheduleBottomSheetState extends State<ScheduleBottomSheet> {
       ),
     );
   }
+
   // 미리 정의해둔 함수
   void onSavePressed() {
     if (formKey.currentState!.validate()) {
-      
+      // 폼 검증하기
+      formKey.currentState!.save(); // 폼 저장하기
+
+      print(startTime); // 시작 시간 출력
+      print(endTime); // 종료 시간 출력
+      print(content); // 내용 출력
     }
   }
 
@@ -125,5 +131,5 @@ class _ScheduleBottomSheetState extends State<ScheduleBottomSheet> {
     }
 
     return null;
-  } 
+  }
 }
