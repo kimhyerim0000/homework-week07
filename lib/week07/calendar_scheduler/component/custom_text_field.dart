@@ -30,16 +30,15 @@ class CustomTextField extends StatelessWidget {
                 : TextInputType.multiline,
 
             // 시간 관련 텍스트 필드는 기본 숫자 키보드 아니면 일반 글자 키보드 보여주기
-            inputFormatters: isTime ? [FilteringTextInputFormatter.digitsOnly,]
-            : [], // 시간 관련 텍스트 필드는 숫자만 입력하도록 제한
+            inputFormatters: isTime
+                ? [FilteringTextInputFormatter.digitsOnly]
+                : [], // 시간 관련 텍스트 필드는 숫자만 입력하도록 제한
             decoration: InputDecoration(
-              border: InputDecoration(
-                border: InputBorder.none,
-                filled: true,
-                fillColor: Colors.grey[300],
-                suffixText: isTime ? '시' : null,
-                // 시간 관련 텍스트 필드는 '시' 접미사 추가
-
+              border: InputBorder.none, // 테두리 삭제
+              filled: true, // 배경색을 지정하겠다는 선언
+              fillColor: Colors.grey[300], //배경색
+              suffixText: isTime ? '시' : null,
+              // 시간 관련 텍스트 필드는 '시' 접미사 추가
             ),
           ),
         ),
