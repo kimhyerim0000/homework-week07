@@ -105,9 +105,10 @@ class _ScheduleBottomSheetState extends State<ScheduleBottomSheet> {
       // 폼 검증하기
       formKey.currentState!.save(); // 폼 저장하기
 
-      print(startTime); // 시작 시간 출력
-      print(endTime); // 종료 시간 출력
-      print(content); // 내용 출력
+      // 기존에 있던 print()문을 모두 삭제하세요!
+      await GetIt.I<LocalDatabase>().createSchedule(  // 일정 생성하기
+        
+      )
     }
   }
 
