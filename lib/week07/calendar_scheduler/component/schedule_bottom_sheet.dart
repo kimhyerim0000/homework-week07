@@ -54,8 +54,8 @@ class _ScheduleBottomSheetState extends State<ScheduleBottomSheet> {
                         label: '종료 시간',
                         isTime: true,
                         onSaved: (String? val) {
-                          // 저장이 실행되면 starTime 변수에 텍스트 필드값 저장
-                          startTime = int.parse(val!);
+                          // 저장이 실행되면 endTime 변수에 텍스트 필드값 저장
+                          endTime = int.parse(val!);
                         },
                         validator: timeValidator,
                       ),
