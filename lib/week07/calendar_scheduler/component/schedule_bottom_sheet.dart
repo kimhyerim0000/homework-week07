@@ -107,7 +107,9 @@ class _ScheduleBottomSheetState extends State<ScheduleBottomSheet> {
 
       // 기존에 있던 print()문을 모두 삭제하세요!
       await GetIt.I<LocalDatabase>().createSchedule(  // 일정 생성하기
-        
+        ScheduleCompanion(
+          
+        )
       )
     }
   }
