@@ -24,17 +24,34 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
-      floatingActionButton: FloatingActionButton( // 새 일정 버튼
+      floatingActionButton: FloatingActionButton(
+        // 새 일정 버튼
         backgroundColor: PRIMARY_COLOR,
         onPressed: () {
-          showModalBottomSheet( // BottomSheet 열기
+          showModalBottomSheet(
+            // BottomSheet 열기
             context: context,
-            isDismissible: true,  // 배경 탭 했을 때 BottomSheet 닫기
-          )
-        }
+            isDismissible: true, // 배경 탭 했을 때 BottomSheet 닫기
+            builder: (_) => ScheduleBottomSheet(),
+            // BottomSheet의 높이를 화면의 최대 높이로 정의하고 스크롤 가능하게 변경
+            isScrollControlled: true,
+          );
+        },
+        child: Icon(Icons.add),
+      ),
 
-      )
-    )
+      body: SafeArea(
+        // 시스템 UI 피해서 UI 구현하기
+        child: Column(
+          children: [
+            // 미리 작업해둔 달력 위젯 보여주기
+            MainCalendar(
+              selectedDate: selectedDate, // 선택된 날짜 전달하기
+              onDaySelected: 
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
