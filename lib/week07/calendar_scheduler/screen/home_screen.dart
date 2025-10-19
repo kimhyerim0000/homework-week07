@@ -77,15 +77,21 @@ class _HomeScreenState extends State<HomeScreen> {
                     itemBuilder: (context, index) {
                       // 현재 index에 해당되는 일정
                       final schedule = snapshot.data![index];
-                      
-                      return Padding( // 좌우로 패딩을 추가해서 UI 개선
-                        padding: const EdgeInsets.only(bottom: 8.0, left: 8.0,
-                        right: 8.0),
-                        child: ScheduleCard(
-                          startTime: schedule.startTime,
-                          endTime: schedule.endTime,
-                          content: schedule.content,
-                        ),
+
+                      return Dismissible(
+                        key: ObjectKey(schedule.id), // 유니크한 키값
+                        // 밀기 방향(왼쪽에서 오른쪽으로)
+                        direction: DismissDirection.startToEnd,
+                        // 밀기 했을 때 실행할 함수
+                        onDismissed: (DismissDirection direction) {
+                          GetIt.I<LocalDatabase>()
+                          .removeSchedule(schedule.id);
+                        }
+                        child: Padding(
+                        // 좌우로 패딩을 추가해서 UI 개선
+                        padding: const EdgeInsets.only(bottom: 8.0, left: 8.0, right: 8.0),
+                        child: ScheduleCard(startTime: schedule.startTime, endTime: schedule.endTime, content: schedule.content),
+                        
                       );
                     },
                   );
