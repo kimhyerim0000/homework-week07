@@ -33,3 +33,13 @@ class _Time extends StatelessWidget {
     );
   }
 }
+
+class _Context extends StatelessWidget {
+  final String content; // 내용
+
+  const _Context({
+    required this.content,
+  });
+
+  @override
+}
