@@ -20,12 +20,7 @@ class _ScheduleBottomSheetState extends State<ScheduleBottomSheet> {
         height: MediaQuery.of(context).size.height / 2 + bottomInset,
         color: Colors.white,
         child: Padding(
-          padding: EdgeInsets.only(
-            left: 8,
-            right: 8,
-            top: 8,
-            bottom: bottomInset,
-          ),
+          padding: EdgeInsets.only(left: 8, right: 8, top: 8, bottom: bottomInset),
           child: Column(
             // 시간 관련 텍스트 필드와 내용 관련 텍스트 필드 세로로 배치
             children: [
@@ -49,10 +44,7 @@ class _ScheduleBottomSheetState extends State<ScheduleBottomSheet> {
                   // [저장] 버튼
                   // [저장] 버튼
                   onPressed: onSavePressed,
-                  style: ElevatedButton.styleFrom(
-                    foregroundColor: Colors.white,
-                    backgroundColor: PRIMARY_COLOR,
-                  ),
+                  style: ElevatedButton.styleFrom(foregroundColor: Colors.white, backgroundColor: PRIMARY_COLOR),
                   child: Text('저장'),
                 ),
               ),

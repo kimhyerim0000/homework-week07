@@ -23,6 +23,8 @@ class CustomTextField extends StatelessWidget {
         Expanded(
           flex: isTime ? 0 : 1,
           child: TextFormField(
+            onSaved: onSaved, // 폼 저장했을 때 실행할 함수
+            validator: validator, // 폼 검증했을 때 실행할 함수
             cursorColor: Colors.grey, // 커서 색상 변경
             maxLines: isTime ? 1 : null,
 
