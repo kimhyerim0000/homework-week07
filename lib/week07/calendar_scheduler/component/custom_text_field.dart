@@ -9,7 +9,7 @@ class CustomTextField extends StatelessWidget {
   final FormFieldSetter<String> onSaved;
   final FormFieldValidator<String> validator;
 
-  const CustomTextField({required this.label, required this.isTime, super.key});
+  const CustomTextField({required this.label, required this.isTime, required this.onSaved, required this.validator, super.key});
 
   @override
   Widget build(BuildContext context) {
